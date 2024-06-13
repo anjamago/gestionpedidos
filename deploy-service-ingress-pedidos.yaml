@@ -20,6 +20,7 @@ spec:
           image: acreastest.azurecr.io/gestionpedidos-back:latest
           ports:
             - containerPort: 3158
+
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: "dev"
@@ -47,6 +48,7 @@ spec:
     - protocol: TCP
       port: 8080
       targetPort: 3158
+
 
 ---
 apiVersion: networking.k8s.io/v1
