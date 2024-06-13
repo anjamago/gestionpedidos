@@ -17,9 +17,9 @@ spec:
     spec:
       containers:
         - name: getionopedidos-back
-          image: acreastest.azurecr.io/getionopedidos-back:latest
+          image: acreastest.azurecr.io/gestionpedidos-back:latest
           ports:
-            - containerPort: 3157
+            - containerPort: 3158
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: "dev"
@@ -45,8 +45,8 @@ spec:
     app: getionopedidos-back
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 3157
+      port: 8080
+      targetPort: 3158
 
 ---
 apiVersion: networking.k8s.io/v1
@@ -66,4 +66,4 @@ spec:
               service:
                 name: svc-getionopedidos-back
                 port:
-                  number: 80
+                  number: 8080
